@@ -20,9 +20,9 @@ function login() {
       }
     })
     .catch(err => {
-      showError("Backend not reachable");
-      console.error(err);
-    });
+  showError("Backend reachable but error occurred");
+  console.error("API ERROR:", err);
+});
 }
 
 function showError(msg) {
