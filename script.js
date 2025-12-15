@@ -1,5 +1,4 @@
 const API_URL = "https://script.google.com/macros/s/AKfycbyJ7dA7lq6ojXFZyUeqBHhaCE_-SnjFicCuiXz1rJgSIw8bHt9vHeqRcNF7bQPD4v6F/exec"; 
-// ⚠️ paste your REAL Apps Script URL here
 
 function login() {
   const u = document.getElementById("username").value.trim();
