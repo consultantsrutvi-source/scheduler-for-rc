@@ -5,18 +5,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="login-box">
+    <h1>Scheduler for RC</h1>
+    <p>Internal Faculty Scheduler</p>
 
-<div class="login-box">
-  <h1>Scheduler for RC</h1>
-  <p>Internal Faculty Scheduler</p>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
 
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <div id="error"></div>
+  </div>
 
-  <button onclick="login()">Login</button>
-  <div id="error"></div>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
