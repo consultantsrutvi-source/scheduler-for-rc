@@ -4,14 +4,7 @@
   <title>Add Vacancy – Scheduler for RC</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-function goToSuggest() {
-  const vacancyId = prompt("Enter Vacancy ID from sheet (e.g. VAC-0001)");
-  if (!vacancyId) return;
 
-  window.location.href = "suggest.html?vacancyId=" + encodeURIComponent(vacancyId);
-}
-</script>
 <body>
 
 <!-- HEADER -->
@@ -114,7 +107,6 @@ function goToSuggest() {
   <textarea id="notes" placeholder="Optional notes"></textarea>
 
   <!-- Save -->
-  <button type="button" onclick="goToSuggest()">Suggest Lecturers</button>
   <button onclick="addVacancy()">Save Vacancy</button>
   <div id="msg"></div>
 </div>
