@@ -6,6 +6,7 @@
 </head>
 <body>
 
+<!-- ===== HEADER ===== -->
 <div class="topbar">
   <div class="brand">
     <img src="logo.png.jpg" alt="Rutvi Logo">
@@ -14,24 +15,101 @@
   <button onclick="logout()">Logout</button>
 </div>
 
+<!-- ===== FORM ===== -->
 <div class="form-container">
   <h2>Add Vacancy</h2>
-<p style="text-align:center; margin-bottom:20px;">
-  <a href="dashboard.html" style="color:#0f4c81; text-decoration:none;">
-    ← Back to Dashboard
-  </a>
-</p>
-  <input type="text" id="college" placeholder="College Name">
-  <input type="text" id="place" placeholder="Place">
 
-  <select id="subject">
+  <p style="text-align:center; margin-bottom:20px;">
+    <a href="dashboard.html" style="color:#0f4c81; text-decoration:none;">
+      ← Back to Dashboard
+    </a>
+  </p>
+
+  <!-- College -->
+  <label>College Name</label>
+  <input type="text" id="college" placeholder="College Name">
+
+  <!-- Place -->
+  <label>Place</label>
+  <select id="place" onchange="handlePlaceChange()">
+    <option value="">Select Place</option>
+
+    <!-- Karnataka -->
+    <option>Bengaluru Urban</option>
+    <option>Bengaluru Rural</option>
+    <option>Chamarajanagara</option>
+    <option>Chikkaballapura</option>
+    <option>Chikkamagaluru</option>
+    <option>Chitradurga</option>
+    <option>Dakshina Kannada</option>
+    <option>Davanagere</option>
+    <option>Hassan</option>
+    <option>Kodagu</option>
+    <option>Kolar</option>
+    <option>Mandya</option>
+    <option>Mysuru</option>
+    <option>Ramanagara</option>
+    <option>Shivamogga</option>
+    <option>Tumakuru</option>
+    <option>Udupi</option>
+
+    <!-- Belagavi Division -->
+    <option>Bagalkot</option>
+    <option>Belagavi</option>
+    <option>Dharwad</option>
+    <option>Gadag</option>
+    <option>Haveri</option>
+    <option>Uttara Kannada</option>
+
+    <!-- Kalaburagi Division -->
+    <option>Ballari</option>
+    <option>Bidar</option>
+    <option>Kalaburagi</option>
+    <option>Koppal</option>
+    <option>Raichur</option>
+    <option>Vijayanagara</option>
+    <option>Vijayapura</option>
+    <option>Yadgir</option>
+
+    <!-- Other States -->
+    <option>Hyderabad</option>
+    <option>Visakhapatnam</option>
+    <option>Vijayawada</option>
+    <option>Pune</option>
+    <option>Pimpri-Chinchwad</option>
+    <option>Mumbai</option>
+    <option>Nagpur</option>
+    <option>Nashik</option>
+    <option>Aurangabad</option>
+    <option>Latur</option>
+    <option>Chennai</option>
+    <option>Coimbatore</option>
+    <option>Namakkal</option>
+
+    <option value="OTHER">Other (Add New)</option>
+  </select>
+
+  <input type="text" id="otherPlace" placeholder="Enter new place"
+         style="display:none;">
+
+  <!-- Subject -->
+  <label>Subject</label>
+  <select id="subject" onchange="handleSubjectChange()">
     <option value="">Select Subject</option>
     <option>Physics</option>
     <option>Chemistry</option>
     <option>Mathematics</option>
     <option>Biology</option>
+    <option>Zoology</option>
+    <option>Botany</option>
+    <option value="OTHER">Other</option>
   </select>
 
+  <input type="text" id="otherSubject" placeholder="Enter subject"
+         style="display:none;">
+
+  <!-- Level -->
+  <label>Level</label>
   <select id="level">
     <option value="">Select Level</option>
     <option>NEET</option>
@@ -41,12 +119,28 @@
     <option>Foundation</option>
   </select>
 
-  <input type="text" id="dates" placeholder="Required Dates (e.g. 2025-06-01,2025-06-02)">
-  <input type="number" id="salary" placeholder="Offered Monthly Salary">
-  <input type="number" id="experience" placeholder="Minimum Experience (years)">
+  <!-- Experience -->
+  <label>Minimum Experience (years)</label>
+  <input type="number" id="experience" placeholder="e.g. 3">
 
-  <textarea id="notes" placeholder="Notes (optional)"></textarea>
+  <!-- Salary -->
+  <label>Offered Monthly Salary</label>
+  <input type="number" id="salary" placeholder="e.g. 45000">
 
+  <!-- Dates -->
+  <label>Required Dates</label>
+  <input type="date" id="datePicker">
+  <button type="button" onclick="addDate()" style="margin-bottom:10px;">
+    Add Date
+  </button>
+
+  <div id="dateList" style="font-size:14px; color:#555;"></div>
+
+  <!-- Notes -->
+  <label>Notes</label>
+  <textarea id="notes" placeholder="Optional notes"></textarea>
+
+  <!-- Save -->
   <button onclick="addVacancy()">Save Vacancy</button>
   <div id="msg"></div>
 </div>
