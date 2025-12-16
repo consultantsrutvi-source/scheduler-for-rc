@@ -1,5 +1,5 @@
 // ================= CONFIG =================
-const API_URL = "PASTE_YOUR_WEB_APP_EXEC_URL_HERE"; 
+const API_URL = "https://script.google.com/macros/s/AKfycbyJ7dA7lq6ojXFZyUeqBHhaCE_-SnjFicCuiXz1rJgSIw8bHt9vHeqRcNF7bQPD4v6F/exec"; 
 // must end with /exec
 
 // ================= AUTH =================
