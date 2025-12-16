@@ -77,3 +77,33 @@ function addVacancy() {
       document.getElementById("msg").innerText = "Backend error";
     });
 }
+let selectedDates = [];
+
+function addDate() {
+  const dateInput = document.getElementById("datePicker");
+  if (!dateInput.value) return;
+
+  if (!selectedDates.includes(dateInput.value)) {
+    selectedDates.push(dateInput.value);
+  }
+
+  renderDates();
+  dateInput.value = "";
+}
+
+function renderDates() {
+  document.getElementById("dateList").innerText = selectedDates.join(", ");
+}
+
+function handlePlaceChange() {
+  const place = document.getElementById("place").value;
+  document.getElementById("otherPlace").style.display =
+    place === "OTHER" ? "block" : "none";
+}
+
+function handleSubjectChange() {
+  const subject = document.getElementById("subject").value;
+  document.getElementById("otherSubject").style.display =
+    subject === "OTHER" ? "block" : "none";
+}
+
