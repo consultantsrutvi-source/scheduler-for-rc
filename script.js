@@ -179,6 +179,44 @@ function handlePlaceChange() {
     other.value = "";
   }
 }
+// ================= ADD VACANCY =================
+function addVacancy() {
+  const payload = {
+    action: "addVacancy",
+    collegeName: document.getElementById("collegeName").value,
+    place:
+      document.getElementById("place").value === "OTHER"
+        ? document.getElementById("otherPlace").value
+        : document.getElementById("place").value,
+    subject: document.getElementById("subject").value,
+    level: document.getElementById("level").value,
+    requiredDates: document.getElementById("requiredDates").value,
+    offeredSalary: document.getElementById("offeredSalary").value,
+    minExp: document.getElementById("minExp").value,
+    notes: document.getElementById("notes").value
+  };
+
+  fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify(payload)
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        alert("Vacancy saved successfully");
+      } else {
+        alert("Vacancy failed to save");
+      }
+    })
+    .catch(err => {
+      alert("Error saving vacancy");
+      console.error(err);
+    });
+}
+
 
 document.addEventListener("DOMContentLoaded", loadPlaces);
 
