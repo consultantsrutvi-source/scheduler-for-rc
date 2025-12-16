@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scheduler for RC – Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <h2>Scheduler for RC</h2>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div class="dashboard">
+  <div class="card">
+    <h3 id="vacancyCount">0</h3>
+    <p>Total Vacancies</p>
+  </div>
+
+  <div class="card">
+    <h3 id="lecturerCount">0</h3>
+    <p>Total Lecturers</p>
+  </div>
+
+  <div class="card">
+    <h3 id="assignmentCount">0</h3>
+    <p>Assignments</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  loadDashboard();
+</script>
+
+</body>
+</html>
