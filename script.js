@@ -14,7 +14,8 @@ function login() {
     .then(data => {
       if (data.success) {
         alert("Login successful");
-        // next step: window.location = "dashboard.html";
+        window.location.href = "dashboard.html";
+      
       } else {
         showError("Invalid username or password");
       }
