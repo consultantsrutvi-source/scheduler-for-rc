@@ -33,42 +33,17 @@
   <label>Place</label>
   <select id="place" onchange="handlePlaceChange()">
     <option value="">Select Place</option>
-
-    <!-- Karnataka -->
     <option>Bengaluru Urban</option>
     <option>Bengaluru Rural</option>
-    <option>Chamarajanagara</option>
-    <option>Chikkaballapura</option>
-    <option>Chikkamagaluru</option>
-    <option>Chitradurga</option>
-    <option>Dakshina Kannada</option>
-    <option>Davanagere</option>
-    <option>Hassan</option>
-    <option>Kodagu</option>
-    <option>Kolar</option>
-    <option>Mandya</option>
     <option>Mysuru</option>
-    <option>Ramanagara</option>
-    <option>Shivamogga</option>
     <option>Tumakuru</option>
-    <option>Udupi</option>
-
-    <!-- Other States -->
+    <option>Mandya</option>
     <option>Hyderabad</option>
-    <option>Visakhapatnam</option>
-    <option>Vijayawada</option>
-    <option>Pune</option>
-    <option>Mumbai</option>
-    <option>Nagpur</option>
     <option>Chennai</option>
-    <option>Coimbatore</option>
-    <option>Namakkal</option>
-
+    <option>Pune</option>
     <option value="OTHER">Other (Add New)</option>
   </select>
-
-  <input type="text" id="otherPlace" placeholder="Enter new place"
-         style="display:none;">
+  <input type="text" id="otherPlace" placeholder="Enter new place" style="display:none;">
 
   <!-- Subject -->
   <label>Subject</label>
@@ -82,9 +57,7 @@
     <option>Botany</option>
     <option value="OTHER">Other</option>
   </select>
-
-  <input type="text" id="otherSubject" placeholder="Enter subject"
-         style="display:none;">
+  <input type="text" id="otherSubject" placeholder="Enter subject" style="display:none;">
 
   <!-- Level -->
   <label>Level</label>
@@ -101,27 +74,31 @@
   <label>Minimum Experience (years)</label>
   <input type="number" id="experience" placeholder="e.g. 3">
 
-  <!-- Salary -->
-  <label>Offered Monthly Salary</label>
+  <!-- SALARY RANGE -->
+  <label>Offered Monthly Salary (Range)</label>
   <select id="salary" onchange="handleSalaryChange()">
-    <option value="">Select Salary</option>
-    <option value="50000">₹50,000</option>
-    <option value="60000">₹60,000</option>
-    <option value="75000">₹75,000</option>
+    <option value="">Select Salary Range</option>
+    <option>₹5,000 – ₹10,000</option>
+    <option>₹10,001 – ₹20,000</option>
+    <option>₹20,001 – ₹30,000</option>
+    <option>₹30,001 – ₹40,000</option>
+    <option>₹40,001 – ₹50,000</option>
+    <option>₹50,001 – ₹75,000</option>
+    <option>₹75,001 – ₹1,00,000</option>
+    <option>₹1,00,001 – ₹1,50,000</option>
+    <option>₹1,50,001 – ₹2,00,000</option>
+    <option>₹2,00,001 – ₹3,00,000</option>
     <option value="OTHER">Other</option>
   </select>
 
-  <input type="number" id="otherSalary"
-         placeholder="Enter salary amount"
+  <input type="text" id="otherSalary"
+         placeholder="Enter custom salary or range"
          style="display:none;">
 
   <!-- Dates -->
   <label>Required Dates</label>
   <input type="date" id="datePicker">
-  <button type="button" onclick="addDate()" style="margin-bottom:10px;">
-    Add Date
-  </button>
-
+  <button type="button" onclick="addDate()">Add Date</button>
   <div id="dateList" style="font-size:14px; color:#555;"></div>
 
   <!-- Notes -->
