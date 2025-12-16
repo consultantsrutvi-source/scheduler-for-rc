@@ -28,3 +28,19 @@ function login() {
 function showError(msg) {
   document.getElementById("error").innerText = msg;
 }
+function loadDashboard() {
+  fetch(`${API_URL}?action=dashboard`)
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("vacancyCount").innerText = data.vacancies;
+      document.getElementById("lecturerCount").innerText = data.lecturers;
+      document.getElementById("assignmentCount").innerText = data.assignments;
+    })
+    .catch(() => {
+      alert("Failed to load dashboard data");
+    });
+}
+
+function logout() {
+  window.location.href = "index.html";
+}
