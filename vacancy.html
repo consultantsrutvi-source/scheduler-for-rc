@@ -31,20 +31,63 @@
   <input type="text" id="college" placeholder="College Name">
 
   <!-- Place -->
-  <label>Place</label>
-  <select id="place" onchange="handlePlaceChange()">
-    <option value="">Select Place</option>
-    <option>Bengaluru Urban</option>
-    <option>Bengaluru Rural</option>
-    <option>Mysuru</option>
-    <option>Tumakuru</option>
-    <option>Mandya</option>
-    <option>Hyderabad</option>
-    <option>Chennai</option>
-    <option>Pune</option>
-    <option value="OTHER">Other (Add New)</option>
-  </select>
-  <input type="text" id="otherPlace" placeholder="Enter new place" style="display:none;">
+ const PLACES = [
+  // Karnataka – Bangalore Division
+  "Bengaluru Urban (Bangalore)",
+  "Bengaluru Rural",
+  "Ramanagara",
+  "Tumakuru (Tumkur)",
+  "Chikkaballapura",
+  "Kolar",
+  "Chamarajanagara",
+
+  // Belagavi Division
+  "Belagavi (Belgaum)",
+  "Bagalkot",
+  "Dharwad",
+  "Gadag",
+  "Haveri",
+  "Uttara Kannada (Karwar)",
+
+  // Kalaburagi Division
+  "Kalaburagi (Gulbarga)",
+  "Ballari (Bellary)",
+  "Bidar",
+  "Chitradurga",
+  "Koppal",
+  "Raichur",
+  "Vijayapura (Bijapur)",
+  "Yadgir",
+  "Vijayanagara",
+
+  // Mysuru Division
+  "Mysuru (Mysore)",
+  "Mandya",
+  "Hassan",
+  "Kodagu (Coorg)",
+  "Chikkamagaluru (Chikmagalur)",
+  "Dakshina Kannada (Mangalore)",
+  "Udupi",
+  "Shivamogga (Shimoga)",
+  "Davanagere",
+
+  // Other States
+  "Hyderabad (Telangana)",
+  "Visakhapatnam (Andhra Pradesh)",
+  "Vijayawada (Andhra Pradesh)",
+  "Pune",
+  "Mumbai",
+  "Nagpur",
+  "Nashik",
+  "Aurangabad",
+  "Latur",
+  "Chennai",
+  "Coimbatore",
+  "Namakkal",
+
+  "OTHER"
+];
+
 
   <!-- Subject -->
   <label>Subject</label>
