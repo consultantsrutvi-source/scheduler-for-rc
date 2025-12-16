@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Vacancy – Scheduler for RC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <img src="logo.png.jpg" alt="Rutvi Logo">
+    <span>Scheduler for RC</span>
+  </div>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<div class="form-container">
+  <h2>Add Vacancy</h2>
+
+  <input type="text" id="college" placeholder="College Name">
+  <input type="text" id="place" placeholder="Place">
+
+  <select id="subject">
+    <option value="">Select Subject</option>
+    <option>Physics</option>
+    <option>Chemistry</option>
+    <option>Mathematics</option>
+    <option>Biology</option>
+  </select>
+
+  <select id="level">
+    <option value="">Select Level</option>
+    <option>NEET</option>
+    <option>JEE</option>
+    <option>CET</option>
+    <option>Boards</option>
+    <option>Foundation</option>
+  </select>
+
+  <input type="text" id="dates" placeholder="Required Dates (e.g. 2025-06-01,2025-06-02)">
+  <input type="number" id="salary" placeholder="Offered Monthly Salary">
+  <input type="number" id="experience" placeholder="Minimum Experience (years)">
+
+  <textarea id="notes" placeholder="Notes (optional)"></textarea>
+
+  <button onclick="addVacancy()">Save Vacancy</button>
+  <div id="msg"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
