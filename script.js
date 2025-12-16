@@ -13,7 +13,6 @@ function login() {
     .then(res => res.json())
     .then(data => {
       if (data.success) {
-        alert("Login successful");
         window.location.href = "dashboard.html";
       
       } else {
