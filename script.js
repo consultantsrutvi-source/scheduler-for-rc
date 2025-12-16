@@ -36,7 +36,9 @@ function loadDashboard() {
 function logout() {
   window.location.href = "index.html";
 }
-function addLecturer() {
+function addLecturer()
+alert("addLecturer() clicked");
+{
   const payload = {
   action: "addLecturer",
   name: document.getElementById("name").value.trim(),
