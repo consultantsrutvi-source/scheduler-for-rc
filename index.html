@@ -1,29 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Scheduler for RC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="login-page">
 
-<div class="login-wrapper">
-  <div class="login-box">
+  <div class="login-wrapper">
+    <div class="login-box">
 
-    <!-- LOGO -->
-    <img src="logo.png.jpg" alt="Rutvi Logo" class="login-logo">
+      <!-- LOGO -->
+      <img src="logo.png.jpg" alt="Rutvi Logo" class="login-logo">
 
-    <h1>Scheduler for RC</h1>
-    <p>Internal Faculty Scheduler</p>
+      <h1>Scheduler for RC</h1>
+      <p>Internal Faculty Scheduler</p>
 
-    <input type="text" id="username" placeholder="Username">
-    <input type="password" id="password" placeholder="Password">
+      <!-- INPUTS -->
+      <input
+        type="text"
+        id="username"
+        placeholder="Username"
+        autocomplete="username"
+      >
 
-    <button onclick="login()">Login</button>
-    <div id="error"></div>
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        autocomplete="current-password"
+      >
 
+      <!-- LOGIN BUTTON -->
+      <button type="button" onclick="login()">Login</button>
+
+      <!-- ERROR MESSAGE -->
+      <div id="error" class="error-text"></div>
+
+    </div>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+
 </body>
 </html>
