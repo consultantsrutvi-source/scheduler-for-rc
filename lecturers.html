@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Lecturer – Scheduler for RC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="brand">
+    <img src="logo.png.jpg" alt="Rutvi Logo">
+    <span>Scheduler for RC</span>
+  </div>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<!-- FORM -->
+<div class="form-container">
+  <h2>Add Lecturer</h2>
+
+  <!-- NAME -->
+  <label>Lecturer Name</label>
+  <input type="text" id="name" placeholder="Full Name">
+
+  <!-- SUBJECT -->
+  <label>Subject</label>
+  <select id="subject" onchange="handleSubjectChange()">
+    <option value="">Select Subject</option>
+    <option>Physics</option>
+    <option>Chemistry</option>
+    <option>Mathematics</option>
+    <option>Biology</option>
+    <option>Zoology</option>
+    <option>Botany</option>
+    <option value="OTHER">Other</option>
+  </select>
+  <input type="text" id="otherSubject" placeholder="Enter subject"
+         style="display:none;">
+
+  <!-- LEVEL -->
+  <label>Level</label>
+  <select id="level">
+    <option value="">Select Level</option>
+    <option>NEET</option>
+    <option>JEE</option>
+    <option>CET</option>
+    <option>Boards</option>
+    <option>Foundation</option>
+  </select>
+
+  <!-- EXPERIENCE -->
+  <label>Experience (Years)</label>
+  <input type="number" id="experience" placeholder="e.g. 5">
+
+  <!-- PREFERRED SALARY -->
+  <label>Preferred Monthly Salary</label>
+  <select id="salary" onchange="handleSalaryChange()">
+    <option value="">Select Salary Range</option>
+    <option>₹5,000 – ₹10,000</option>
+    <option>₹10,001 – ₹20,000</option>
+    <option>₹20,001 – ₹30,000</option>
+    <option>₹30,001 – ₹40,000</option>
+    <option>₹40,001 – ₹50,000</option>
+    <option>₹50,001 – ₹75,000</option>
+    <option>₹75,001 – ₹1,00,000</option>
+    <option>₹1,00,001 – ₹1,50,000</option>
+    <option>₹1,50,001 – ₹2,00,000</option>
+    <option>₹2,00,001 – ₹3,00,000</option>
+    <option value="OTHER">Other</option>
+  </select>
+  <input type="text" id="otherSalary"
+         placeholder="Enter custom salary"
+         style="display:none;">
+
+  <!-- PLACE -->
+  <label>Place</label>
+  <select id="place" onchange="handlePlaceChange()">
+    <option value="">Select Place</option>
+    <option>Bengaluru</option>
+    <option>Mysuru</option>
+    <option>Tumakuru</option>
+    <option>Mangaluru</option>
+    <option>Hubballi</option>
+    <option value="OTHER">Other</option>
+  </select>
+  <input type="text" id="otherPlace"
+         placeholder="Enter place"
+         style="display:none;">
+
+  <!-- AVAILABLE DATES -->
+  <label>Available Dates</label>
+  <input type="date" id="datePicker">
+  <button type="button" onclick="addDate()">Add Date</button>
+  <div id="dateList" style="font-size:14px;color:#555;"></div>
+
+  <!-- STATUS -->
+  <label>Status</label>
+  <select id="status">
+    <option value="ACTIVE">ACTIVE</option>
+    <option value="INACTIVE">INACTIVE</option>
+  </select>
+
+  <!-- SAVE -->
+  <button onclick="addLecturer()">Save Lecturer</button>
+  <div id="msg"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
