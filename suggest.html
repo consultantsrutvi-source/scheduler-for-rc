@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auto Suggest – Scheduler for RC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="topbar">
+  <div class="brand">
+    <img src="logo.png.jpg" alt="Rutvi Logo">
+    <span>Scheduler for RC</span>
+  </div>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<!-- CONTENT -->
+<div class="form-container">
+  <h2>Suggested Lecturers</h2>
+
+  <p style="text-align:center;color:#666;">
+    Suggestions based on subject, level, experience & salary
+  </p>
+
+  <div id="suggestions">
+    <p style="text-align:center;color:#999;">
+      Suggestions will appear here
+    </p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+<!-- this function will be added later -->
+<script>
+  if (typeof loadSuggestions === "function") {
+    loadSuggestions();
+  }
+</script>
+
+</body>
+</html>
