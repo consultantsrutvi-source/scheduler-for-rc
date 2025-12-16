@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- HEADER -->
 <div class="topbar">
   <div class="brand">
     <img src="logo.png.jpg" alt="Rutvi Logo">
@@ -15,7 +15,7 @@
   <button onclick="logout()">Logout</button>
 </div>
 
-<!-- ===== FORM ===== -->
+<!-- FORM -->
 <div class="form-container">
   <h2>Add Vacancy</h2>
 
@@ -53,35 +53,13 @@
     <option>Tumakuru</option>
     <option>Udupi</option>
 
-    <!-- Belagavi Division -->
-    <option>Bagalkot</option>
-    <option>Belagavi</option>
-    <option>Dharwad</option>
-    <option>Gadag</option>
-    <option>Haveri</option>
-    <option>Uttara Kannada</option>
-
-    <!-- Kalaburagi Division -->
-    <option>Ballari</option>
-    <option>Bidar</option>
-    <option>Kalaburagi</option>
-    <option>Koppal</option>
-    <option>Raichur</option>
-    <option>Vijayanagara</option>
-    <option>Vijayapura</option>
-    <option>Yadgir</option>
-
     <!-- Other States -->
     <option>Hyderabad</option>
     <option>Visakhapatnam</option>
     <option>Vijayawada</option>
     <option>Pune</option>
-    <option>Pimpri-Chinchwad</option>
     <option>Mumbai</option>
     <option>Nagpur</option>
-    <option>Nashik</option>
-    <option>Aurangabad</option>
-    <option>Latur</option>
     <option>Chennai</option>
     <option>Coimbatore</option>
     <option>Namakkal</option>
@@ -125,7 +103,17 @@
 
   <!-- Salary -->
   <label>Offered Monthly Salary</label>
-  <input type="number" id="salary" placeholder="e.g. 45000">
+  <select id="salary" onchange="handleSalaryChange()">
+    <option value="">Select Salary</option>
+    <option value="50000">₹50,000</option>
+    <option value="60000">₹60,000</option>
+    <option value="75000">₹75,000</option>
+    <option value="OTHER">Other</option>
+  </select>
+
+  <input type="number" id="otherSalary"
+         placeholder="Enter salary amount"
+         style="display:none;">
 
   <!-- Dates -->
   <label>Required Dates</label>
