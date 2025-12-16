@@ -31,63 +31,18 @@
   <input type="text" id="college" placeholder="College Name">
 
   <!-- Place -->
- const PLACES = [
-  // Karnataka – Bangalore Division
-  "Bengaluru Urban (Bangalore)",
-  "Bengaluru Rural",
-  "Ramanagara",
-  "Tumakuru (Tumkur)",
-  "Chikkaballapura",
-  "Kolar",
-  "Chamarajanagara",
+ <label>Place</label>
 
-  // Belagavi Division
-  "Belagavi (Belgaum)",
-  "Bagalkot",
-  "Dharwad",
-  "Gadag",
-  "Haveri",
-  "Uttara Kannada (Karwar)",
+<select id="place" onchange="handlePlaceChange()">
+  <option value="">Select Place</option>
+</select>
 
-  // Kalaburagi Division
-  "Kalaburagi (Gulbarga)",
-  "Ballari (Bellary)",
-  "Bidar",
-  "Chitradurga",
-  "Koppal",
-  "Raichur",
-  "Vijayapura (Bijapur)",
-  "Yadgir",
-  "Vijayanagara",
-
-  // Mysuru Division
-  "Mysuru (Mysore)",
-  "Mandya",
-  "Hassan",
-  "Kodagu (Coorg)",
-  "Chikkamagaluru (Chikmagalur)",
-  "Dakshina Kannada (Mangalore)",
-  "Udupi",
-  "Shivamogga (Shimoga)",
-  "Davanagere",
-
-  // Other States
-  "Hyderabad (Telangana)",
-  "Visakhapatnam (Andhra Pradesh)",
-  "Vijayawada (Andhra Pradesh)",
-  "Pune",
-  "Mumbai",
-  "Nagpur",
-  "Nashik",
-  "Aurangabad",
-  "Latur",
-  "Chennai",
-  "Coimbatore",
-  "Namakkal",
-
-  "OTHER"
-];
-
+<input
+  type="text"
+  id="otherPlace"
+  placeholder="Enter place"
+  style="display:none;"
+>
 
   <!-- Subject -->
   <label>Subject</label>
