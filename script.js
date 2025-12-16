@@ -38,25 +38,29 @@ function logout() {
 }
 function addLecturer() {
   const payload = {
-    name: document.getElementById("name").value.trim(),
-    subject: document.getElementById("subject").value === "OTHER"
-      ? document.getElementById("otherSubject").value
-      : document.getElementById("subject").value,
-    level: document.getElementById("level").value,
-    experience: document.getElementById("experience").value,
-    preferredSalary: document.getElementById("salary").value === "OTHER"
-      ? document.getElementById("otherSalary").value
-      : document.getElementById("salary").value,
-    place: document.getElementById("place").value === "OTHER"
-      ? document.getElementById("otherPlace").value
-      : document.getElementById("place").value,
-    availableDates: selectedDates.join(", "),
-    status: document.getElementById("status").value
-  };
+  action: "addLecturer",
+  name: document.getElementById("name").value.trim(),
+  subject: document.getElementById("subject").value === "OTHER"
+    ? document.getElementById("otherSubject").value
+    : document.getElementById("subject").value,
+  level: document.getElementById("level").value,
+  experience: document.getElementById("experience").value,
+  preferredSalary: document.getElementById("salary").value === "OTHER"
+    ? document.getElementById("otherSalary").value
+    : document.getElementById("salary").value,
+  place: document.getElementById("place").value === "OTHER"
+    ? document.getElementById("otherPlace").value
+    : document.getElementById("place").value,
+  availableDates: selectedDates.join(", "),
+  status: document.getElementById("status").value
+};
 
-  fetch(API_URL + "?action=addLecturer", {
-    method: "POST",
-    body: JSON.stringify(payload)
+
+  fetch(API_URL, {
+  method: "POST",
+  body: JSON.stringify(payload)
+})
+
   })
   .then(r => r.json())
   .then(res => {
