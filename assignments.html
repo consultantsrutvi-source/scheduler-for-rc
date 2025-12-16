@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignments – Rutvi Consultants</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="brand">
+    <img src="logo.png.jpg" alt="Logo">
+    <span>Scheduler for RC</span>
+  </div>
+  <button onclick="logout()">Logout</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="form-container">
+  <h2>Assignments</h2>
+
+  <!-- VACANCY SELECT -->
+  <label>Select Vacancy</label>
+  <select id="vacancySelect">
+    <option value="">(Vacancies will load here)</option>
+  </select>
+
+  <!-- FILTERS (UI ONLY FOR NOW) -->
+  <h3>Filters</h3>
+
+  <label>Preferred Experience</label>
+  <select>
+    <option>Any</option>
+    <option>Higher Experience First</option>
+    <option>Exact Match</option>
+  </select>
+
+  <label>Salary Preference</label>
+  <select>
+    <option>Any</option>
+    <option>Lower Salary First</option>
+    <option>Exact Match</option>
+  </select>
+
+  <label>Place Preference</label>
+  <select>
+    <option>Any</option>
+    <option>Same Place First</option>
+    <option>Nearby First</option>
+  </select>
+
+  <!-- SUGGESTED LECTURERS -->
+  <h3>Suggested Lecturers</h3>
+
+  <div id="suggestions">
+    <div class="card">
+      <b>Lecturer Name</b><br>
+      Subject: Physics<br>
+      Experience: 5 yrs<br>
+      Place: Bengaluru<br><br>
+      <button disabled>Assign</button>
+    </div>
+
+    <div class="card">
+      <b>Lecturer Name</b><br>
+      Subject: Chemistry<br>
+      Experience: 8 yrs<br>
+      Place: Mysuru<br><br>
+      <button disabled>Assign</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
