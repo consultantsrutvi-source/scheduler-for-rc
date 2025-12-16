@@ -251,5 +251,9 @@ function addVacancy() {
       alert("Vacancy error");
     });
 }
+function testVacancy() {
+  alert("Button is working");
+}
+
 
 
