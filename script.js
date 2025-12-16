@@ -103,3 +103,83 @@ function login() {
       console.error(err);
     });
 }
+const PLACES = [
+  "Bengaluru Urban (Bangalore)",
+  "Bengaluru Rural",
+  "Ramanagara",
+  "Tumakuru (Tumkur)",
+  "Chikkaballapura",
+  "Kolar",
+  "Chamarajanagara",
+
+  "Belagavi (Belgaum)",
+  "Bagalkot",
+  "Dharwad",
+  "Gadag",
+  "Haveri",
+  "Uttara Kannada (Karwar)",
+
+  "Kalaburagi (Gulbarga)",
+  "Ballari (Bellary)",
+  "Bidar",
+  "Chitradurga",
+  "Koppal",
+  "Raichur",
+  "Vijayapura (Bijapur)",
+  "Yadgir",
+  "Vijayanagara",
+
+  "Mysuru (Mysore)",
+  "Mandya",
+  "Hassan",
+  "Kodagu (Coorg)",
+  "Chikkamagaluru (Chikmagalur)",
+  "Dakshina Kannada (Mangalore)",
+  "Udupi",
+  "Shivamogga (Shimoga)",
+  "Davanagere",
+
+  "Hyderabad (Telangana)",
+  "Visakhapatnam",
+  "Vijayawada",
+  "Pune",
+  "Mumbai",
+  "Nagpur",
+  "Nashik",
+  "Aurangabad",
+  "Latur",
+  "Chennai",
+  "Coimbatore",
+  "Namakkal",
+
+  "OTHER"
+];
+
+function loadPlaces() {
+  const placeSelect = document.getElementById("place");
+  if (!placeSelect) return;
+
+  placeSelect.innerHTML = "<option value=''>Select Place</option>";
+
+  PLACES.forEach(p => {
+    const opt = document.createElement("option");
+    opt.value = p;
+    opt.textContent = p;
+    placeSelect.appendChild(opt);
+  });
+}
+
+function handlePlaceChange() {
+  const place = document.getElementById("place").value;
+  const other = document.getElementById("otherPlace");
+
+  if (place === "OTHER") {
+    other.style.display = "block";
+  } else {
+    other.style.display = "none";
+    other.value = "";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadPlaces);
+
