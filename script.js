@@ -9,10 +9,19 @@ function login() {
   fetch(`${API_URL}?action=login&u=${encodeURIComponent(u)}&p=${encodeURIComponent(p)}`)
     .then(res => res.json())
     .then(data => {
-      if (data.success) window.location.href = "dashboard.html";
-      else document.getElementById("error").innerText = "Invalid login";
+      console.log("LOGIN RESPONSE:", data); // debug
+      if (data.success === true) {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("error").innerText = "Invalid login";
+      }
+    })
+    .catch(err => {
+      document.getElementById("error").innerText = "Server error";
+      console.error(err);
     });
 }
+
 
 /* DASHBOARD */
 function loadDashboard() {
