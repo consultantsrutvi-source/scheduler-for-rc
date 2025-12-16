@@ -44,3 +44,36 @@ function loadDashboard() {
 function logout() {
   window.location.href = "index.html";
 }
+function addVacancy() {
+  const payload = {
+    college: document.getElementById("college").value.trim(),
+    place: document.getElementById("place").value.trim(),
+    subject: document.getElementById("subject").value,
+    level: document.getElementById("level").value,
+    dates: document.getElementById("dates").value.trim(),
+    salary: document.getElementById("salary").value,
+    experience: document.getElementById("experience").value,
+    notes: document.getElementById("notes").value.trim()
+  };
+
+  if (!payload.college || !payload.subject || !payload.level) {
+    document.getElementById("msg").innerText = "Please fill required fields";
+    return;
+  }
+
+  fetch(`${API_URL}?action=addVacancy`, {
+    method: "POST",
+    body: JSON.stringify(payload)
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        document.getElementById("msg").innerText = "Vacancy saved successfully";
+      } else {
+        document.getElementById("msg").innerText = "Failed to save vacancy";
+      }
+    })
+    .catch(() => {
+      document.getElementById("msg").innerText = "Backend error";
+    });
+}
