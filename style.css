@@ -67,4 +67,47 @@ body {
   color: red;
   font-size: 14px;
 }
+.topbar {
+  background: #0f4c81;
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar button {
+  background: #ffffff;
+  color: #0f4c81;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dashboard {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  width: 220px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  font-size: 36px;
+  color: #0f4c81;
+  margin: 0;
+}
+
+.card p {
+  margin-top: 10px;
+  color: #666;
+}
 
