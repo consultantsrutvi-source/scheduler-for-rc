@@ -6,6 +6,7 @@
 </head>
 <body>
 
+<!-- TOP BAR -->
 <div class="topbar">
   <div class="brand">
     <img src="logo.png.jpg" alt="Rutvi Logo">
@@ -14,46 +15,54 @@
   <button onclick="logout()">Logout</button>
 </div>
 
+<!-- DASHBOARD CONTENT -->
 <div class="dashboard">
+
+  <!-- TOTAL VACANCIES -->
   <div class="card">
     <h3 id="vacancyCount">0</h3>
     <p>Total Vacancies</p>
   </div>
 
+  <!-- TOTAL LECTURERS -->
   <div class="card">
     <h3 id="lecturerCount">0</h3>
     <p>Total Lecturers</p>
   </div>
 
+  <!-- TOTAL ASSIGNMENTS -->
   <div class="card">
     <h3 id="assignmentCount">0</h3>
     <p>Assignments</p>
   </div>
+
+  <!-- ADD VACANCY -->
+  <div class="card action-card"
+       onclick="location.href='vacancy.html'">
+    <h3>+</h3>
+    <p>Add New Vacancy</p>
+  </div>
+
+  <!-- ADD LECTURER -->
+  <div class="card action-card"
+       onclick="location.href='lecturers.html'">
+    <h3>+</h3>
+    <p>Add Lecturer</p>
+  </div>
+
+  <!-- ASSIGNMENTS -->
+  <div class="card action-card"
+       onclick="location.href='assignments.html'">
+    <h3>📋</h3>
+    <p>Assignments</p>
+  </div>
+
 </div>
 
 <script src="script.js"></script>
 <script>
   loadDashboard();
 </script>
-<script>
-  function goToVacancy() {
-    window.location.href = "vacancy.html";
-  }
-</script>
 
 </body>
 </html>
-<div class="card" onclick="goToVacancy()" style="cursor:pointer;">
-  <h3>+</h3>
-  <p>Add New Vacancy</p>
-</div>
-<div class="card" onclick="location.href='lecturers.html'" style="cursor:pointer;">
-  <h3>+</h3>
-  <p>Add Lecturer</p>
-</div>
-
-<div class="card" onclick="location.href='assignments.html'" style="cursor:pointer;">
-  <h3>📋</h3>
-  <p>Assignments</p>
-</div>
-
