@@ -147,3 +147,54 @@
   font-size: 15px;
   color: #666;
 }
+.form-container {
+  max-width: 520px;
+  background: white;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.form-container h2 {
+  margin-top: 0;
+  color: #0f4c81;
+  text-align: center;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-container textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background: #0f4c81;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background: #0b3b64;
+}
+
+#msg {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 14px;
+}
