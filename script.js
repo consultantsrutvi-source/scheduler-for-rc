@@ -66,3 +66,40 @@ function loadDashboard() {
       document.getElementById("assignmentCount").innerText = d.assignments;
     });
 }
+// ================= LOGIN =================
+function login() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  if (!username || !password) {
+    document.getElementById("error").innerText = "Enter username and password";
+    return;
+  }
+
+  const payload = {
+    action: "login",
+    username: username,
+    password: password
+  };
+
+  fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8"
+    },
+    body: JSON.stringify(payload)
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        localStorage.setItem("user", data.username);
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("error").innerText = data.message || "Login failed";
+      }
+    })
+    .catch(err => {
+      document.getElementById("error").innerText = "Server error";
+      console.error(err);
+    });
+}
