@@ -190,7 +190,7 @@ function addVacancy() {
         : document.getElementById("place").value,
     subject: document.getElementById("subject").value,
     level: document.getElementById("level").value,
-    requiredDates: document.getElementById("requiredDates").value,
+   requiredDates: selectedDates.join(", "),
     offeredSalary: document.getElementById("offeredSalary").value,
     minExp: document.getElementById("minExp").value,
     notes: document.getElementById("notes").value
