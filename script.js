@@ -254,6 +254,24 @@ function addVacancy() {
 function testVacancy() {
   alert("Button is working");
 }
+// ===== PATCH: DATE HANDLING =====
+if (typeof selectedDates === "undefined") {
+  var selectedDates = [];
+}
+
+function addDate() {
+  const dateInput = document.getElementById("requiredDates");
+  if (!dateInput || !dateInput.value) return;
+
+  selectedDates.push(dateInput.value);
+
+  const list = document.getElementById("dateList");
+  if (list) {
+    list.innerText = selectedDates.join(", ");
+  }
+
+  dateInput.value = "";
+}
 
 
 
