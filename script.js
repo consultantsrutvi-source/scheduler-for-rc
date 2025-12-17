@@ -1,5 +1,7 @@
 // ================= CONFIG =================
-const API_URL = "https://script.google.com/macros/s/AKfycbyJ7dA7lq6ojXFZyUeqBHhaCE_-SnjFicCuiXz1rJgSIw8bHt9vHeqRcNF7bQPD4v6F/exec"; 
+// ===== API CONFIG (DO NOT TOUCH) =====
+const API_URL = "https://script.google.com/macros/s/AKfycbyJ7dA7lq6ojXFZyUeqBHhaCE_-SnjFicCuiXz1rJgSIw8bHt9vHeqRcNF7bQPD4v6F/exec";
+
 // must end with /exec
 
 // ================= AUTH =================
@@ -65,43 +67,42 @@ function loadDashboard() {
       document.getElementById("assignmentCount").innerText = d.assignments;
     });
 }
-// ================= LOGIN =================
-function login() {
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
 
-  if (!username || !password) {
-    document.getElementById("error").innerText = "Enter username and password";
+// ===== LOGIN (FINAL – DO NOT MODIFY) =====
+function login() {
+  const u = document.getElementById("username")?.value;
+  const p = document.getElementById("password")?.value;
+  const err = document.getElementById("error");
+
+  if (!u || !p) {
+    err.innerText = "Enter username and password";
     return;
   }
 
-  const payload = {
-    action: "login",
-    username: username,
-    password: password
-  };
-
   fetch(API_URL, {
     method: "POST",
-    headers: {
-      "Content-Type": "text/plain;charset=utf-8"
-    },
-    body: JSON.stringify(payload)
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify({
+      action: "login",
+      username: u,
+      password: p
+    })
   })
-    .then(res => res.json())
-    .then(data => {
-      if (data.success) {
-        localStorage.setItem("user", data.username);
+    .then(r => r.text())
+    .then(t => {
+      const res = JSON.parse(t);
+      if (res.success) {
+        localStorage.setItem("user", res.username);
         window.location.href = "dashboard.html";
       } else {
-        document.getElementById("error").innerText = data.message || "Login failed";
+        err.innerText = res.message || "Login failed";
       }
     })
-    .catch(err => {
-      document.getElementById("error").innerText = "Server error";
-      console.error(err);
+    .catch(() => {
+      err.innerText = "Cannot reach server";
     });
 }
+
 const PLACES = [
   "Bengaluru Urban (Bangalore)",
   "Bengaluru Rural",
@@ -271,41 +272,6 @@ function addDate() {
   }
 
   dateInput.value = "";
-}
-// ===== LOGIN (RESTORE) =====
-function login() {
-  const username = document.getElementById("username")?.value.trim();
-  const password = document.getElementById("password")?.value.trim();
-
-  if (!username || !password) {
-    document.getElementById("error").innerText = "Enter username and password";
-    return;
-  }
-
-  const payload = {
-    action: "login",
-    username: username,
-    password: password
-  };
-
-  fetch(API_URL, {
-    method: "POST",
-    headers: { "Content-Type": "text/plain;charset=utf-8" },
-    body: JSON.stringify(payload)
-  })
-    .then(r => r.json())
-    .then(res => {
-      if (res.success) {
-        localStorage.setItem("user", res.username);
-        window.location.href = "dashboard.html";
-      } else {
-        document.getElementById("error").innerText =
-          res.message || "Login failed";
-      }
-    })
-    .catch(() => {
-      document.getElementById("error").innerText = "Server error";
-    });
 }
 
 
